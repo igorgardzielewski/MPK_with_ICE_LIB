@@ -12,16 +12,16 @@ build_slice:
 	slice2cpp mpk.ice
 
 build_system:
-	$(CXX) $(CXXFLAGS) -c mpk.cpp system.cpp
-	$(CXX) -o system mpk.o system.o $(LDFLAGS)
+	$(CXX) $(CXXFLAGS) -c mpk.cpp system.cpp SystemI.cpp
+	$(CXX) -o system mpk.o system.o SystemI.o $(LDFLAGS)
 
 build_passenger:
-	$(CXX) $(CXXFLAGS) -c mpk.cpp passenger.cpp
-	$(CXX) -o passenger mpk.o passenger.o $(LDFLAGS)
+	$(CXX) $(CXXFLAGS) -c mpk.cpp passenger.cpp PassengerI.cpp
+	$(CXX) -o passenger mpk.o passenger.o PassengerI.o $(LDFLAGS)
 
 build_tram:
-	$(CXX) $(CXXFLAGS) -c mpk.cpp tram.cpp
-	$(CXX) -o tram mpk.o tram.o $(LDFLAGS)
+	$(CXX) $(CXXFLAGS) -c mpk.cpp tram.cpp TramI.cpp
+	$(CXX) -o tram mpk.o tram.o TramI.o $(LDFLAGS)
 
 clean:
 	rm -f *.o system passenger tram mpk.cpp mpk.h

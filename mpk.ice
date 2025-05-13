@@ -10,7 +10,8 @@ module SIP {
     OFFLINE,
     WAITONLINE,
     WAITOFFLINE,
-  }
+  };
+  
   struct Time {
     int hour;
     int minute;
@@ -45,6 +46,7 @@ module SIP {
      void UpdateTramInfo(Tram* tram, Time time);
      void addCurrentTram(Tram* tram);
      void removeCurrentTram(Tram* tram);
+     void removeComingTram(Tram* tram);
   };
 
   interface Line
